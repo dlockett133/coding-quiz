@@ -9,13 +9,19 @@ var timerCount = document.createElement("h2")
 
 
 scoreText.textContent = "High Scores";
-timerCount.textContent = "90"
+timerCount.textContent = ""
 
-var timeCount = 90;
+var count = 90;
 
 function startTimer() {
     setInterval(function(event){
-        console.log(`Counting down!`)
+        timerCount.textContent = count;
+        if (count > 0) {
+            count--;
+        } else {
+            clearInterval(startTimer);
+            timerCount.textContent = "";
+        }
     }, 1000)
 }
 // Appends Elements to the DOM
