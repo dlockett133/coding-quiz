@@ -2,10 +2,15 @@
 var scoreEl = document.querySelector("#score");
 // Selects Element with 'timer' ID
 var timerEl = document.querySelector("#timer");
-
+// Selects All 'button' Elements 
+var buttonELs = document.querySelectorAll("button");
 
 var scoreText = document.createElement("h2");
-var timerCount = document.createElement("h2")
+var timerCount = document.createElement("h2");
+
+// Appends Elements to the DOM
+scoreEl.appendChild(scoreText);
+timerEl.appendChild(timerCount);
 
 scoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: "
@@ -24,6 +29,5 @@ function startTimer() {
         }
     }, 1000)
 }
-// Appends Elements to the DOM
-scoreEl.appendChild(scoreText)
-timerEl.appendChild(timerCount)
+
+buttonELs.forEach(button => button.setAttribute("style","background: blueViolet; color: white"))
