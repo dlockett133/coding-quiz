@@ -13,6 +13,7 @@ timerCount.textContent = ""
 
 var count = 90;
 
+// Starts Game Timer
 function startTimer() {
     setInterval(function(event){
         timerCount.textContent = count;
