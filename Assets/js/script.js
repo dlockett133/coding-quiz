@@ -7,16 +7,15 @@ var timerEl = document.querySelector("#timer");
 var scoreText = document.createElement("h2");
 var timerCount = document.createElement("h2")
 
-
 scoreText.textContent = "High Scores";
-timerCount.textContent = ""
+timerCount.textContent = "Timer: "
 
 var count = 90;
 
 // Starts Game Timer
 function startTimer() {
     setInterval(function(event){
-        timerCount.textContent = count;
+        timerCount.innerHTML = `<h2>Timer: ${count}<h2>`
         if (count > 0) {
             count--;
         } else {
