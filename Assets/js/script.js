@@ -42,7 +42,8 @@ var question2 = "What is 1+2";
 var question3 = "What is 1+3";
 var question4 = "What is 1+4";
 
-
+const multipleChoice = 4;
+var answerChoices1 = ['1','2','3','4'];
 // Queues Count Down
 // function countDown() {
 //     headlineEl.textContent=""
@@ -76,7 +77,8 @@ function startTimer() {
 
 function game() {
     startGameBtn.remove();
-
+    var answerBtn = document.createElement("button");
+    
     if(questionNum === 1) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question1}`
