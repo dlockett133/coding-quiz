@@ -64,7 +64,7 @@ var answerChoices1 = ['1','2','3','4'];
 // Starts Game Timer
 function startTimer() {
     setInterval(function(event){
-        timerCount.innerHTML = `<h2>Timer: ${gameTime}<h2>`
+        timerCount.innerHTML = `<h2>Timer: ${gameTime}</h2>`
         if (gameTime > 0) {
             gameTime--;
         } else {
@@ -77,11 +77,12 @@ function startTimer() {
 
 function game() {
     startGameBtn.remove();
-    var answerBtn = document.createElement("button");
+    // var answerBtn = document.createElement("button");
     
     if(questionNum === 1) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question1}`
+        answerChoices1.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
     }
     if(questionNum === 2) {
         bannerEl.textContent = `Question ${questionNum}`
@@ -95,6 +96,11 @@ function game() {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question4}`
     }
+    // Selects All 'button' Elements 
+    var buttonEls = document.querySelectorAll("button");
+    // Sets styling for all 'answers' id Elements
+    buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
+    buttonEls.forEach(btn => btn.setAttribute('style', 'background: blueViolet; border-color: blueViolet'))
 }
 
 // Selects All 'button' Elements 
