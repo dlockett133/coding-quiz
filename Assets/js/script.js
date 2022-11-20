@@ -43,10 +43,10 @@ var question3 = "Which of the following methods can be used to display data in s
 var question4 = "How can a datatype be declared to be a constant type?";
 
 const multipleChoice = 4;
-var answerChoices1 = ['1','2','3','4'];
-var answerChoices2 = ['2','2','3','4'];
-var answerChoices3 = ['3','3','3','4'];
-var answerChoices4 = ['9','2','5','4'];
+var answerChoices1 = ['Object-Oriented-correct','Object-Based','Procedural','None of the above'];
+var answerChoices2 = ['getElementById()','getElementsByClassName()','Both A and B','None of the above'];
+var answerChoices3 = ['document.write()','console.log()','window.alert()','All of the above'];
+var answerChoices4 = ['const','var','let','constant'];
 // Queues Count Down
 // function countDown() {
 //     headlineEl.textContent=""
@@ -109,7 +109,7 @@ function game() {
     var buttonEls = document.querySelectorAll("button");
     // Sets styling for all 'answers' id Elements
     buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
-    buttonEls.forEach(btn => btn.setAttribute('style', 'background: blueViolet; border-color: blueViolet'))
+    buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; background: blueViolet; border-color: blueViolet'))
 }
 
 // Selects All 'button' Elements 
