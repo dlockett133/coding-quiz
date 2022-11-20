@@ -81,6 +81,18 @@ function game() {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question1}`
     }
+    if(questionNum === 2) {
+        bannerEl.textContent = `Question ${questionNum}`
+        questionsText.textContent=`${question2}`
+    }
+    if(questionNum === 3) {
+        bannerEl.textContent = `Question ${questionNum}`
+        questionsText.textContent=`${question3}`
+    }
+    if(questionNum === 4) {
+        bannerEl.textContent = `Question ${questionNum}`
+        questionsText.textContent=`${question4}`
+    }
 }
 
 // Selects All 'button' Elements 
