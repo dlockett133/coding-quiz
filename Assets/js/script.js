@@ -26,8 +26,7 @@ questionsEl.appendChild(questionsText)
 
 // 'Start Game Button' Styling and Class declarations
 startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
-startGameBtn.style.backgroundColor = 'blueViolet';
-startGameBtn.style.borderColor = 'blueViolet'
+startGameBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
 startGameBtn.textContent = "Start Game"
 
 scoreText.textContent = "High Scores";
@@ -36,7 +35,13 @@ timerCount.textContent = "Timer: "
 // Declares the times for the quiz 
 var queueTime = 3;
 var gameTime = 90;
-var questionNum = 0; 
+var questionNum = 1; 
+
+var question1 = "What is 1+1";
+var question2 = "What is 1+2";
+var question3 = "What is 1+3";
+var question4 = "What is 1+4";
+
 
 // Queues Count Down
 // function countDown() {
@@ -71,14 +76,18 @@ function startTimer() {
 
 function game() {
     startGameBtn.remove();
-    bannerEl.textContent = "Question 1"
-    questionsText.textContent=" This is question 1"
+
+    if(questionNum === 1) {
+        bannerEl.textContent = `Question ${questionNum}`
+        questionsText.textContent=`${question1}`
+    }
 }
 
 // Selects All 'button' Elements 
 var buttonEls = document.querySelectorAll("button");
-// Applies classes for all 'button' elements
+// Sets styling for all 'answers' id Elements
 buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
+buttonEls.forEach(btn => btn.setAttribute('style', 'background: blueViolet; border-color: blueViolet'))
 
 function startGame() {
     startTimer();
