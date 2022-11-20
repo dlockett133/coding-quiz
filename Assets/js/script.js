@@ -11,13 +11,20 @@ var buttonELs = document.querySelectorAll("button");
 
 // var startGameText = document.createElement("h1");
 headlineEL.innerHTML = "<h1>Coding Quiz<h1>"
+var startGameBtn = document.createElement("button")
 var scoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 
 // Appends Elements to the DOM
-
+headlineEL.appendChild(startGameBtn);
 scoreEl.appendChild(scoreText);
 timerEl.appendChild(timerCount);
+
+// 'Start Game Button' Styling and Class declarations
+startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
+startGameBtn.style.backgroundColor = 'blueViolet';
+startGameBtn.style.borderColor = 'blueViolet'
+startGameBtn.textContent = "Start Game"
 
 scoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: "
