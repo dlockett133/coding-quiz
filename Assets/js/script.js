@@ -7,6 +7,7 @@ var headlineEL = document.querySelector("#headline");
 // Selects All 'button' Elements 
 var buttonELs = document.querySelectorAll("button");
 
+var startGameText = document.createElement("h1");
 var scoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 
