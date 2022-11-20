@@ -71,8 +71,8 @@ function startTimer() {
 
 function game() {
     startGameBtn.remove();
-    headlineEl.
-    questionsText.textContent="Question 1"
+    bannerEl.textContent = "Question 1"
+    questionsText.textContent=" This is question 1"
 }
 
 // Selects All 'button' Elements 

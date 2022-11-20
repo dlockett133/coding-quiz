@@ -22,6 +22,10 @@ button:hover {
     opacity: .6;
 }
 
+#questions {
+    text-align: center;
+}
+
 #answers {
     display: flex;
     flex-direction: column;
