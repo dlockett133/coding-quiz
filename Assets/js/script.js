@@ -4,6 +4,8 @@ var scoreEl = document.querySelector("#score");
 var timerEl = document.querySelector("#timer");
 // Selects the 'headline' ID
 var headlineEL = document.querySelector("#headline");
+// Selects the 'questions' ID
+var questionsEL = document.querySelector("#questions");
 // Selects All 'button' Elements 
 var buttonELs = document.querySelectorAll("button");
 
