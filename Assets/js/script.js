@@ -9,11 +9,13 @@ var questionsEL = document.querySelector("#questions");
 // Selects All 'button' Elements 
 var buttonELs = document.querySelectorAll("button");
 
-var startGameText = document.createElement("h1");
+// var startGameText = document.createElement("h1");
+headlineEL.innerHTML = "<h1>Coding Quiz<h1>"
 var scoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 
 // Appends Elements to the DOM
+
 scoreEl.appendChild(scoreText);
 timerEl.appendChild(timerCount);
 
