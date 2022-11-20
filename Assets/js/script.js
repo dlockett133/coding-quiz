@@ -37,13 +37,16 @@ var queueTime = 3;
 var gameTime = 90;
 var questionNum = 1; 
 
-var question1 = "What is 1+1";
-var question2 = "What is 1+2";
-var question3 = "What is 1+3";
-var question4 = "What is 1+4";
+var question1 = "Javascript is an _______ language?";
+var question2 = "Which of the following methods is used to access HTML elements using Javascript?";
+var question3 = "Which of the following methods can be used to display data in some form using Javascript?";
+var question4 = "How can a datatype be declared to be a constant type?";
 
 const multipleChoice = 4;
-var answerChoices1 = ['1','2','3','4'];
+var answerChoices1 = ['','2','3','4'];
+var answerChoices2 = ['2','2','3','4'];
+var answerChoices3 = ['3','3','3','4'];
+var answerChoices4 = ['9','2','5','4'];
 // Queues Count Down
 // function countDown() {
 //     headlineEl.textContent=""
