@@ -21,3 +21,10 @@ header {
 button:hover {
     opacity: .6;
 }
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}

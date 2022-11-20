@@ -3,24 +3,29 @@ var scoreEl = document.querySelector("#score");
 // Selects Element with 'timer' ID
 var timerEl = document.querySelector("#timer");
 // Selects the 'headline' ID
-var headlineEL = document.querySelector("#headline");
+var headlineEl = document.querySelector("#headline");
+// Selects 'banner' ID
+var bannerEl = document.querySelector("#banner");
 // Selects the 'questions' ID
-var questionsEL = document.querySelector("#questions");
+var questionsEl = document.querySelector("#questions");
+// Selects the 'answers' ID
+var answersEl = document.querySelector("#answers");
 
-
-// var startGameText = document.createElement("h1");
-headlineEL.innerHTML = "<h1>Coding Quiz<h1>"
+bannerEl.textContent = "Coding Quiz"
 var startGameBtn = document.createElement("button")
 var scoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
+var questionsText = document.createElement("h2");
+
 
 // Appends Elements to the DOM
-headlineEL.appendChild(startGameBtn);
+headlineEl.appendChild(startGameBtn);
 scoreEl.appendChild(scoreText);
 timerEl.appendChild(timerCount);
+questionsEl.appendChild(questionsText)
 
 // 'Start Game Button' Styling and Class declarations
-// startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
+startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
 startGameBtn.style.backgroundColor = 'blueViolet';
 startGameBtn.style.borderColor = 'blueViolet'
 startGameBtn.textContent = "Start Game"
@@ -31,22 +36,25 @@ timerCount.textContent = "Timer: "
 // Declares the times for the quiz 
 var queueTime = 3;
 var gameTime = 90;
+var questionNum = 0; 
 
 // Queues Count Down
-function countDown() {
-    headlineEL.textContent=""
-    startGameBtn.remove();
-    setInterval(function(event) {
-        headlineEL.textContent = `${queueTime}`
-        if (queueTime > 0){
-            queueTime--;
-        }else {
-            clearInterval(countDown);
-            headlineEL.textContent = "";
-        }
+// function countDown() {
+//     headlineEl.textContent=""
+//     startGameBtn.remove();
+//     setInterval(function(event) {
+//         headlineEl.textContent = `${queueTime}`
+//         if (queueTime > 0){
+//             queueTime--;
+//         }else {
+//             clearInterval(countDown);
+//             headlineEl.textContent = "";
+//         }
 
-     }, 1000)
-}
+//      }, 1000)
+// }
+
+
 // Starts Game Timer
 function startTimer() {
     setInterval(function(event){
@@ -61,13 +69,21 @@ function startTimer() {
 }
 
 
-// Selects All 'button' Elements 
-var buttonELs = document.querySelectorAll("button");
-// Applies classes for all 'button' elements
-buttonELs.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
-
-function startGame() {
-    countDown();
+function game() {
+    startGameBtn.remove();
+    headlineEl.
+    questionsText.textContent="Question 1"
 }
 
-// startGame();
+// Selects All 'button' Elements 
+var buttonEls = document.querySelectorAll("button");
+// Applies classes for all 'button' elements
+buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
+
+function startGame() {
+    startTimer();
+    game();
+}
+
+
+startGameBtn.addEventListener("click", startGame);
