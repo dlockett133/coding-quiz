@@ -28,7 +28,10 @@ startGameBtn.textContent = "Start Game"
 scoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: "
 
+// Declares the time for the quiz 
 var count = 90;
+
+// Queues Count Down
 
 // Starts Game Timer
 function startTimer() {
@@ -43,7 +46,13 @@ function startTimer() {
     }, 1000)
 }
 
+
 // Selects All 'button' Elements 
 var buttonELs = document.querySelectorAll("button");
 // Applies classes for all 'button' elements
 buttonELs.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
+
+startGameBtn.addEventListener('click', function() {
+    
+    startTimer();
+})
