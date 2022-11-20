@@ -2,6 +2,8 @@
 var scoreEl = document.querySelector("#score");
 // Selects Element with 'timer' ID
 var timerEl = document.querySelector("#timer");
+// Selects the 'headline' ID
+var headlineEL = document.querySelector("#headline");
 // Selects All 'button' Elements 
 var buttonELs = document.querySelectorAll("button");
 
