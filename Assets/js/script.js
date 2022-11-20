@@ -6,8 +6,7 @@ var timerEl = document.querySelector("#timer");
 var headlineEL = document.querySelector("#headline");
 // Selects the 'questions' ID
 var questionsEL = document.querySelector("#questions");
-// Selects All 'button' Elements 
-var buttonELs = document.querySelectorAll("button");
+
 
 // var startGameText = document.createElement("h1");
 headlineEL.innerHTML = "<h1>Coding Quiz<h1>"
@@ -21,7 +20,7 @@ scoreEl.appendChild(scoreText);
 timerEl.appendChild(timerCount);
 
 // 'Start Game Button' Styling and Class declarations
-startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
+// startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
 startGameBtn.style.backgroundColor = 'blueViolet';
 startGameBtn.style.borderColor = 'blueViolet'
 startGameBtn.textContent = "Start Game"
@@ -44,4 +43,7 @@ function startTimer() {
     }, 1000)
 }
 
-buttonELs.forEach(button => button.setAttribute("style","background: blueViolet; color: white"))
+// Selects All 'button' Elements 
+var buttonELs = document.querySelectorAll("button");
+// Applies classes for all 'button' elements
+buttonELs.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
