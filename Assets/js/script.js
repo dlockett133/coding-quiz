@@ -87,14 +87,20 @@ function game() {
     if(questionNum === 2) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question2}`
+        answerChoices2.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
+
     }
     if(questionNum === 3) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question3}`
+        answerChoices3.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
+
     }
     if(questionNum === 4) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question4}`
+        answerChoices4.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
+
     }
     // Selects All 'button' Elements 
     var buttonEls = document.querySelectorAll("button");
