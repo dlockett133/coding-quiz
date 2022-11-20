@@ -28,11 +28,17 @@ startGameBtn.textContent = "Start Game"
 scoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: "
 
-// Declares the time for the quiz 
+// Declares the times for the quiz 
+var queuesGame = 3;
 var count = 90;
 
 // Queues Count Down
-
+function countDown() {
+    headlineEL.textContent = ""
+    startGameBtn.remove();
+    // setInterval(function(event) {
+    // })
+}
 // Starts Game Timer
 function startTimer() {
     setInterval(function(event){
@@ -53,6 +59,6 @@ var buttonELs = document.querySelectorAll("button");
 buttonELs.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
 
 startGameBtn.addEventListener('click', function() {
-    
+    countDown();
     startTimer();
 })
