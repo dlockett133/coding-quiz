@@ -43,7 +43,7 @@ var question3 = "Which of the following methods can be used to display data in s
 var question4 = "How can a datatype be declared to be a constant type?";
 
 const multipleChoice = 4;
-var answerChoices1 = ['','2','3','4'];
+var answerChoices1 = ['1','2','3','4'];
 var answerChoices2 = ['2','2','3','4'];
 var answerChoices3 = ['3','3','3','4'];
 var answerChoices4 = ['9','2','5','4'];
