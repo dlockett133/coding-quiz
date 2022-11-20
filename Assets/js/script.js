@@ -109,7 +109,7 @@ function game() {
     var buttonEls = document.querySelectorAll("button");
     // Sets styling for all 'answers' id Elements
     buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
-    buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; background: blueViolet; border-color: blueViolet'))
+    buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
 }
 
 // Selects All 'button' Elements 
