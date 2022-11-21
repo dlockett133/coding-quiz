@@ -110,15 +110,15 @@ function game() {
     // Selects All 'button' Elements 
     var buttonEls = document.querySelectorAll("button");
     // Sets styling for all 'answers' id Elements
-    buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
+    buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary"))
     buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
 }
 
-// Selects All 'button' Elements 
-var buttonEls = document.querySelectorAll("button");
-// Sets styling for all 'answers' id Elements
-buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
-buttonEls.forEach(btn => btn.setAttribute('style', 'background: blueViolet; border-color: blueViolet'))
+// // Selects All 'button' Elements 
+// var buttonEls = document.querySelectorAll("button");
+// // Sets styling for all 'answers' id Elements
+// buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
+// buttonEls.forEach(btn => btn.setAttribute('style', 'background: blueViolet; border-color: blueViolet'))
 
 function startGame(event) {
     startTimer();
