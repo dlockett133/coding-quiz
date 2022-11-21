@@ -16,13 +16,14 @@ var startGameBtn = document.createElement("button")
 var highScoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 var questionsText = document.createElement("h2");
-// var scoreText;
+var scoreText = document.createElement("p");
 
 // Appends Elements to the DOM
 headlineEl.appendChild(startGameBtn);
 highScoreEl.appendChild(highScoreText);
 timerEl.appendChild(timerCount);
 questionsEl.appendChild(questionsText)
+headlineEl.appendChild(scoreText);
 
 // 'Start Game Button' Styling and Class declarations
 startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
@@ -74,7 +75,6 @@ function startTimer() {
         timerCount.innerHTML = `<h2>Timer: ${gameTime}</h2>`
         if (gameTime > 0) {
             gameTime--;
-            console.log(`${gameTime}`)
         } else {
             clearInterval(startTimer);
             gameOver();
@@ -98,7 +98,7 @@ function game() {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question1}`
         answerChoices1.forEach((x,y) => answerBtns[y].textContent = `${x}`)
-        answerBtns[0].onclick = ()=> {correct(); score+=100;}
+        answerBtns[0].onclick = ()=> {correct(); }
         answerBtns[1].onclick = ()=> {incorrect();}
         answerBtns[2].onclick = ()=> {incorrect();}
         answerBtns[3].onclick = ()=> {incorrect();}
@@ -109,7 +109,7 @@ function game() {
         answerChoices2.forEach((x,y) => answerBtns[y].textContent = `${x}`)
         answerBtns[0].onclick = ()=> {incorrect();}
         answerBtns[1].onclick = ()=> {incorrect();}
-        answerBtns[2].onclick = ()=> {correct(); score+=100;}
+        answerBtns[2].onclick = ()=> {correct(); }
         answerBtns[3].onclick = ()=> {incorrect();}
     }else if(questionNum === 3) {
         bannerEl.textContent = `Question ${questionNum}`
@@ -118,13 +118,13 @@ function game() {
         answerBtns[0].onclick = ()=> {incorrect();}
         answerBtns[1].onclick = ()=> {incorrect();}
         answerBtns[2].onclick = ()=> {incorrect();}
-        answerBtns[3].onclick = ()=> {correct(); score+=100;}
+        answerBtns[3].onclick = ()=> {correct(); }
 
     }else if(questionNum === 4) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question4}`
         answerChoices4.forEach((x,y) => answerBtns[y].textContent = `${x}`)
-        answerBtns[0].onclick = ()=> {correct(); score+=100;}
+        answerBtns[0].onclick = ()=> {correct(); }
         answerBtns[1].onclick = ()=> {incorrect();}
         answerBtns[2].onclick = ()=> {incorrect();}
         answerBtns[3].onclick = ()=> {incorrect();}
@@ -138,6 +138,7 @@ function correct() {
     if(questionNum <= 4){
         answersEl.innerHTML=""
         questionNum++;
+        score+=100;
         game();
     }
 }
@@ -156,6 +157,7 @@ function incorrect(){
 function gameOver() {
     gameTime = 0;
     bannerEl.textContent = "Game Over!"
+    scoreText.textContent = `${score}`
     questionsText.textContent = ""
     answersEl.innerHTML=""
     timerCount.textContent = "Timer: 00";
