@@ -82,30 +82,29 @@ function startTimer() {
 
 function game() {
     startGameBtn.remove();
-    // var answerBtn = document.createElement("button");
-    
+    // questionNum++
     if(questionNum === 1) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question1}`
         answerChoices1.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
-    }
-    if(questionNum === 2) {
+    }else if(questionNum === 2) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question2}`
         answerChoices2.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
 
-    }
-    if(questionNum === 3) {
+    }else if(questionNum === 3) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question3}`
         answerChoices3.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
 
-    }
-    if(questionNum === 4) {
+    }else if(questionNum === 4) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question4}`
         answerChoices4.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
 
+    }else {
+        bannerEl.textContent = "Game Over!"
+        questionsText.textContent = ""
     }
     // Selects All 'button' Elements 
     var buttonEls = document.querySelectorAll("button");
@@ -114,11 +113,13 @@ function game() {
     buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
 }
 
-// // Selects All 'button' Elements 
-// var buttonEls = document.querySelectorAll("button");
-// // Sets styling for all 'answers' id Elements
-// buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
-// buttonEls.forEach(btn => btn.setAttribute('style', 'background: blueViolet; border-color: blueViolet'))
+function correct() {
+    if(questionNum <= 4){
+        answersEl.innerHTML=""
+        questionNum++;
+        game();
+    }
+}
 
 function startGame(event) {
     startTimer();
