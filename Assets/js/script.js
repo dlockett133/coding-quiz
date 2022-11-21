@@ -43,7 +43,9 @@ var question3 = "Which of the following methods can be used to display data in s
 var question4 = "How can a datatype be declared to be a constant type?";
 
 const multipleChoice = 4;
-var answerChoices1 = ['Object-Oriented-correct','Object-Based','Procedural','None of the above'];
+
+// Correct Answers [0], [2], [3], [0]
+var answerChoices1 = ['Object-Oriented','Object-Based','Procedural','None of the above'];
 var answerChoices2 = ['getElementById()','getElementsByClassName()','Both A and B','None of the above'];
 var answerChoices3 = ['document.write()','console.log()','window.alert()','All of the above'];
 var answerChoices4 = ['const','var','let','constant'];
@@ -72,7 +74,7 @@ function startTimer() {
             gameTime--;
         } else {
             clearInterval(startTimer);
-            timerCount.textContent = "";
+            timerCount.textContent = "0";
         }
     }, 1000)
 }
