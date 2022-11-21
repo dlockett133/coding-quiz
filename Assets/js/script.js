@@ -30,7 +30,7 @@ startGameBtn.setAttribute('style', 'background: blueViolet; border-color: blueVi
 startGameBtn.textContent = "Start Game"
 
 scoreText.textContent = "High Scores";
-timerCount.textContent = "Timer: "
+timerCount.textContent = "Timer: 90"
 
 // Declares the times for the quiz 
 var queueTime = 3;
@@ -120,8 +120,9 @@ var buttonEls = document.querySelectorAll("button");
 buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary btn-lg"))
 buttonEls.forEach(btn => btn.setAttribute('style', 'background: blueViolet; border-color: blueViolet'))
 
-function startGame() {
+function startGame(event) {
     startTimer();
+    event.preventDefault()
     game();
 }
 
