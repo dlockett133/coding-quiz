@@ -77,6 +77,7 @@ function startTimer() {
         } else {
             clearInterval(startTimer);
             timerCount.textContent = "0";
+            
         }
     }, 1000)
 }
@@ -98,21 +99,35 @@ function game() {
         questionsText.textContent=`${question1}`
         answerChoices1.forEach((x,y) => answerBtns[y].textContent = `${x}`)
         answerBtns[0].onclick = ()=> {correct(); score+=100;}
-        // answerBtns[0].onclick = ()=> {correct(); score+=100;}
+        answerBtns[1].onclick = ()=> {incorrect();}
+        answerBtns[2].onclick = ()=> {incorrect();}
+        answerBtns[3].onclick = ()=> {incorrect();}
         
     }else if(questionNum === 2) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question2}`
         answerChoices2.forEach((x,y) => answerBtns[y].textContent = `${x}`)
+        answerBtns[0].onclick = ()=> {incorrect();}
+        answerBtns[1].onclick = ()=> {incorrect();}
+        answerBtns[2].onclick = ()=> {correct(); score+=100;}
+        answerBtns[3].onclick = ()=> {incorrect();}
     }else if(questionNum === 3) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question3}`
         answerChoices3.forEach((x,y) => answerBtns[y].textContent = `${x}`)
+        answerBtns[0].onclick = ()=> {incorrect();}
+        answerBtns[1].onclick = ()=> {incorrect();}
+        answerBtns[2].onclick = ()=> {incorrect();}
+        answerBtns[3].onclick = ()=> {correct(); score+=100;}
 
     }else if(questionNum === 4) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question4}`
         answerChoices4.forEach((x,y) => answerBtns[y].textContent = `${x}`)
+        answerBtns[0].onclick = ()=> {correct(); score+=100;}
+        answerBtns[1].onclick = ()=> {incorrect();}
+        answerBtns[2].onclick = ()=> {incorrect();}
+        answerBtns[3].onclick = ()=> {incorrect();}
 
     }else {
         bannerEl.textContent = "Game Over!"
