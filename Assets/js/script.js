@@ -37,6 +37,7 @@ var queueTime = 3;
 var gameTime = 90;
 var questionNum = 1; 
 const amount = 4;
+var score = 0;
 
 var question1 = "Javascript is an _______ language?";
 var question2 = "Which of the following methods is used to access HTML elements using Javascript?";
@@ -92,11 +93,11 @@ function game() {
      answerBtns.forEach(btn => btn.setAttribute("class", "answers btn btn-primary"))
      answerBtns.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
     
-    //  var i = 0;
      if(questionNum === 1) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question1}`
         answerChoices1.forEach((x,y) => answerBtns[y].textContent = `${x}`)
+        answerBtns[0].onclick = ()=> {correct(); score+=100;}
     }else if(questionNum === 2) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question2}`
@@ -137,5 +138,6 @@ function startGame(event) {
     game();
 }
 
+// function iWasClicked
 
 startGameBtn.addEventListener("click", startGame);
