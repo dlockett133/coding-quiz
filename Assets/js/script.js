@@ -44,13 +44,13 @@ var question2 = "Which of the following methods is used to access HTML elements 
 var question3 = "Which of the following methods can be used to display data in some form using Javascript?";
 var question4 = "How can a datatype be declared to be a constant type?";
 
-const multipleChoice = 4;
 
 // Correct Answers [0], [2], [3], [0]
 var answerChoices1 = ['Object-Oriented','Object-Based','Procedural','None of the above'];
 var answerChoices2 = ['getElementById()','getElementsByClassName()','Both A and B','None of the above'];
 var answerChoices3 = ['document.write()','console.log()','window.alert()','All of the above'];
 var answerChoices4 = ['const','var','let','constant'];
+
 // Queues Count Down
 // function countDown() {
 //     headlineEl.textContent=""
@@ -74,10 +74,10 @@ function startTimer() {
         timerCount.innerHTML = `<h2>Timer: ${gameTime}</h2>`
         if (gameTime > 0) {
             gameTime--;
+            console.log(`${gameTime}`)
         } else {
             clearInterval(startTimer);
-            timerCount.textContent = "0";
-            
+            gameOver();
         }
     }, 1000)
 }
@@ -130,15 +130,8 @@ function game() {
         answerBtns[3].onclick = ()=> {incorrect();}
 
     }else {
-        bannerEl.textContent = "Game Over!"
-        questionsText.textContent = ""
-        answersEl.innerHTML=""
+        gameOver();
     }
-    // // Selects All 'button' Elements 
-    // var buttonEls = document.querySelectorAll("button");
-    // // Sets styling for all 'answers' id Elements
-    // buttonEls.forEach(btn => btn.setAttribute("class", "answers btn btn-primary"))
-    // buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
 }
 
 function correct() {
@@ -152,13 +145,21 @@ function correct() {
 function incorrect(){
     if(questionNum <= 4){
         answersEl.innerHTML=""
-        // timerCount.innerHTML = `<h2>Timer: ${gameTime - 15}</h2>`
         var subTime = gameTime - 15;
         gameTime = subTime;
         questionNum++;
         game();
         return gameTime
     }
+}
+
+function gameOver() {
+    gameTime = 0;
+    bannerEl.textContent = "Game Over!"
+    questionsText.textContent = ""
+    answersEl.innerHTML=""
+    timerCount.textContent = "Timer: 00";
+    return gameTime;
 }
 function startGame(event) {
     startTimer();
