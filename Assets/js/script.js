@@ -1,5 +1,5 @@
 // Selects Element with 'score' ID
-var scoreEl = document.querySelector("#score");
+var highScoreEl = document.querySelector("#highScore");
 // Selects Element with 'timer' ID
 var timerEl = document.querySelector("#timer");
 // Selects the 'headline' ID
@@ -13,14 +13,14 @@ var answersEl = document.querySelector("#answers");
 
 bannerEl.textContent = "Coding Quiz"
 var startGameBtn = document.createElement("button")
-var scoreText = document.createElement("h2");
+var highScoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 var questionsText = document.createElement("h2");
-
+// var scoreText;
 
 // Appends Elements to the DOM
 headlineEl.appendChild(startGameBtn);
-scoreEl.appendChild(scoreText);
+highScoreEl.appendChild(highScoreText);
 timerEl.appendChild(timerCount);
 questionsEl.appendChild(questionsText)
 
@@ -29,7 +29,7 @@ startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
 startGameBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
 startGameBtn.textContent = "Start Game"
 
-scoreText.textContent = "High Scores";
+highScoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: 90"
 
 // Declares the times for the quiz 
