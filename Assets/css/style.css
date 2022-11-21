@@ -14,6 +14,29 @@ header {
     margin: 5px 20px;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#headline {
+    text-align: center;
+}
+
 button:hover {
     opacity: .6;
+}
+
+#questions {
+    text-align: center;
+    width: 500px;
+    align-self: center;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
 }
