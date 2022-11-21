@@ -30,6 +30,7 @@ startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
 startGameBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
 startGameBtn.textContent = "Start Game"
 
+scoreText.setAttribute('id', 'score');
 highScoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: 90"
 
@@ -157,7 +158,7 @@ function incorrect(){
 function gameOver() {
     gameTime = 0;
     bannerEl.textContent = "Game Over!"
-    scoreText.textContent = `${score}`
+    scoreText.textContent = `Your Score: ${score}`
     questionsText.textContent = ""
     answersEl.innerHTML=""
     timerCount.textContent = "Timer: 00";
