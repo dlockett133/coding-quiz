@@ -36,6 +36,7 @@ timerCount.textContent = "Timer: 90"
 var queueTime = 3;
 var gameTime = 90;
 var questionNum = 1; 
+const amount = 4;
 
 var question1 = "Javascript is an _______ language?";
 var question2 = "Which of the following methods is used to access HTML elements using Javascript?";
@@ -82,35 +83,44 @@ function startTimer() {
 
 function game() {
     startGameBtn.remove();
-    // questionNum++
-    if(questionNum === 1) {
+    for (i=0; i < amount; i++){
+        answersEl.innerHTML+= `<button data-choice="${i}"></button>`
+    }
+    // Selects All 'button' Elements 
+    var answerBtns = document.querySelectorAll("button");
+     // Sets styling for all 'answers' id Elements
+     answerBtns.forEach(btn => btn.setAttribute("class", "answers btn btn-primary"))
+     answerBtns.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
+    
+    //  var i = 0;
+     if(questionNum === 1) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question1}`
-        answerChoices1.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
+        answerChoices1.forEach((x,y) => answerBtns[y].textContent = `${x}`)
     }else if(questionNum === 2) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question2}`
-        answerChoices2.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
-
+        answerChoices2.forEach((x,y) => answerBtns[y].textContent = `${x}`)
     }else if(questionNum === 3) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question3}`
-        answerChoices3.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
+        answerChoices3.forEach((x,y) => answerBtns[y].textContent = `${x}`)
 
     }else if(questionNum === 4) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question4}`
-        answerChoices4.forEach(x => answersEl.innerHTML+= `<button>${x}</button>`)
+        answerChoices4.forEach((x,y) => answerBtns[y].textContent = `${x}`)
 
     }else {
         bannerEl.textContent = "Game Over!"
         questionsText.textContent = ""
+        answersEl.innerHTML=""
     }
-    // Selects All 'button' Elements 
-    var buttonEls = document.querySelectorAll("button");
-    // Sets styling for all 'answers' id Elements
-    buttonEls.forEach(btn => btn.setAttribute("class", "btn btn-primary"))
-    buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
+    // // Selects All 'button' Elements 
+    // var buttonEls = document.querySelectorAll("button");
+    // // Sets styling for all 'answers' id Elements
+    // buttonEls.forEach(btn => btn.setAttribute("class", "answers btn btn-primary"))
+    // buttonEls.forEach(btn => btn.setAttribute('style', 'width: 300px; margin: 3px; background: blueViolet; border-color: blueViolet'))
 }
 
 function correct() {
