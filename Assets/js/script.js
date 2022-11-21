@@ -98,6 +98,8 @@ function game() {
         questionsText.textContent=`${question1}`
         answerChoices1.forEach((x,y) => answerBtns[y].textContent = `${x}`)
         answerBtns[0].onclick = ()=> {correct(); score+=100;}
+        // answerBtns[0].onclick = ()=> {correct(); score+=100;}
+        
     }else if(questionNum === 2) {
         bannerEl.textContent = `Question ${questionNum}`
         questionsText.textContent=`${question2}`
@@ -132,6 +134,17 @@ function correct() {
     }
 }
 
+function incorrect(){
+    if(questionNum <= 4){
+        answersEl.innerHTML=""
+        // timerCount.innerHTML = `<h2>Timer: ${gameTime - 15}</h2>`
+        var subTime = gameTime - 15;
+        gameTime = subTime;
+        questionNum++;
+        game();
+        return gameTime
+    }
+}
 function startGame(event) {
     startTimer();
     event.preventDefault()
