@@ -8,6 +8,8 @@ var headlineEl = document.querySelector("#headline");
 var bannerEl = document.querySelector("#banner");
 // Selects 'score' ID
 var scoreText = document.querySelector("#score");
+// Selects 'input' ID
+var submitScore = document.querySelector("#input")
 // Selects the 'questions' ID
 var questionsEl = document.querySelector("#questions");
 // Selects the 'answers' ID
@@ -80,7 +82,6 @@ function startTimer() {
         }
     }, 1000)
 }
-
 
 function game() {
     startGameBtn.remove();
