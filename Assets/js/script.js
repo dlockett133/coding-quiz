@@ -9,7 +9,9 @@ var bannerEl = document.querySelector("#banner");
 // Selects 'score' ID
 var scoreText = document.querySelector("#score");
 // Selects 'input' ID
-var submitScore = document.querySelector("#input")
+var submitScore = document.querySelector("#input");
+// Selects 'list' ID
+var scoreList = document.querySelector("#list");
 // Selects the 'questions' ID
 var questionsEl = document.querySelector("#questions");
 // Selects the 'answers' ID
@@ -48,7 +50,9 @@ submitBtn.setAttribute("id", "submit")
 // submitBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet; margin-left: 10px;padding-bottom: 2px;padding-top: 2px;margin-bottom: 4px;')
 submitBtn.textContent = "Submit";
 
-saveScoreForm.innerHTML = `<label for="initials">Initials</label>
+saveScoreForm.setAttribute('id', 'form');
+saveScoreForm.innerHTML = `
+<label for="initials">Initials</label>
 <input type="text" id="initials" placeholder="Enter your initials">`
 
 // scoreText.setAttribute('id', 'score');
@@ -179,7 +183,9 @@ function saveScore () {
     bannerEl.textContent = "Scores"
     submitScore.appendChild(saveScoreForm);
     saveScoreForm.appendChild(submitBtn);
-    
+}
+
+function submitScore () {
 
 }
 
