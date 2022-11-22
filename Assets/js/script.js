@@ -167,6 +167,7 @@ function startGame(event) {
 
 startGameBtn.addEventListener("click", startGame);
 
+// saveScoreBtn.addEventListener("click",)
 
 
 
