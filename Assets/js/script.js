@@ -54,7 +54,7 @@ saveScoreForm.setAttribute('id', 'form');
 // saveScoreForm.setAttribute('onsubmit')
 saveScoreForm.innerHTML = `
 <label for="initials">Initials</label>
-<input type="text" id="initials" placeholder="Enter your initials">`
+<input type="text" id="initials" placeholder="Enter your initials" maxlength="3">`
 
 // scoreText.setAttribute('id', 'score');
 highScoreText.textContent = "High Scores";
