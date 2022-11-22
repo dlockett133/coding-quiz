@@ -23,7 +23,7 @@ var questionsText = document.createElement("h2");
 // var scoreText = document.createElement("p");
 var saveScoreBtn = document.createElement("button");
 var saveScoreForm = document.createElement("form");
-var submitBtn = document.createElement("form");
+var submitBtn = document.createElement("button");
 
 // Appends Elements to the DOM
 headlineEl.appendChild(startGameBtn);
@@ -43,9 +43,13 @@ saveScoreBtn.setAttribute("class", "btn btn-primary btn-lg")
 saveScoreBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
 saveScoreBtn.textContent = "Save Score";
 
-submitBtn.setAttribute("class", "btn btn-primary btn-lg")
-submitBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
+submitBtn.setAttribute("class", "btn btn-primary")
+submitBtn.setAttribute("id", "submit")
+// submitBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet; margin-left: 10px;padding-bottom: 2px;padding-top: 2px;margin-bottom: 4px;')
 submitBtn.textContent = "Submit";
+
+saveScoreForm.innerHTML = `<label for="initials">Initials</label>
+<input type="text" id="initials" placeholder="Enter your initials">`
 
 // scoreText.setAttribute('id', 'score');
 highScoreText.textContent = "High Scores";
@@ -173,7 +177,8 @@ function startGame() {
 function saveScore () {
     saveScoreBtn.remove();
     bannerEl.textContent = "Scores"
-
+    submitScore.appendChild(saveScoreForm);
+    saveScoreForm.appendChild(submitBtn);
     
 
 }
@@ -205,3 +210,5 @@ saveScoreBtn.addEventListener("click",saveScore);
   <input type="text" id="initials" placeholder="Enter your initials">
   <button type="submit">Submit</button>
 </form> */}
+
+{/* <button class="btn btn-primary" style="background: blueViolet;border-color: blueViolet;margin-left: 10px;padding-bottom: 2px;padding-top: 2px;margin-bottom: 4px;">Submit</button> */}
