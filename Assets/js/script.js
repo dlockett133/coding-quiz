@@ -17,6 +17,7 @@ var highScoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 var questionsText = document.createElement("h2");
 var scoreText = document.createElement("p");
+var saveScoreBtn = document.createElement("button");
 
 // Appends Elements to the DOM
 headlineEl.appendChild(startGameBtn);
@@ -24,11 +25,17 @@ highScoreEl.appendChild(highScoreText);
 timerEl.appendChild(timerCount);
 questionsEl.appendChild(questionsText)
 headlineEl.appendChild(scoreText);
+// headlineEl.appendChild(saveScoreBtn);
+
 
 // 'Start Game Button' Styling and Class declarations
 startGameBtn.setAttribute("class", "btn btn-primary btn-lg")
 startGameBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
 startGameBtn.textContent = "Start Game"
+
+saveScoreBtn.setAttribute("class", "btn btn-primary btn-lg")
+saveScoreBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
+saveScoreBtn.textContent = "Save Me";
 
 scoreText.setAttribute('id', 'score');
 highScoreText.textContent = "High Scores";
@@ -52,23 +59,6 @@ var answerChoices1 = ['Object-Oriented','Object-Based','Procedural','None of the
 var answerChoices2 = ['getElementById()','getElementsByClassName()','Both A and B','None of the above'];
 var answerChoices3 = ['document.write()','console.log()','window.alert()','All of the above'];
 var answerChoices4 = ['const','var','let','constant'];
-
-// Queues Count Down
-// function countDown() {
-//     headlineEl.textContent=""
-//     startGameBtn.remove();
-//     setInterval(function(event) {
-//         headlineEl.textContent = `${queueTime}`
-//         if (queueTime > 0){
-//             queueTime--;
-//         }else {
-//             clearInterval(countDown);
-//             headlineEl.textContent = "";
-//         }
-
-//      }, 1000)
-// }
-
 
 // Starts Game Timer
 function startTimer() {
@@ -132,6 +122,7 @@ function game() {
 
     }else {
         gameOver();
+        // headlineEl.appendChild(saveScoreBtn);
     }
 }
 
@@ -162,7 +153,9 @@ function gameOver() {
     questionsText.textContent = ""
     answersEl.innerHTML=""
     timerCount.textContent = "Timer: 00";
+    headlineEl.appendChild(saveScoreBtn)
     return gameTime;
+    
 }
 function startGame(event) {
     startTimer();
@@ -173,3 +166,22 @@ function startGame(event) {
 // function iWasClicked
 
 startGameBtn.addEventListener("click", startGame);
+
+
+
+
+// Queues Count Down
+// function countDown() {
+//     headlineEl.textContent=""
+//     startGameBtn.remove();
+//     setInterval(function(event) {
+//         headlineEl.textContent = `${queueTime}`
+//         if (queueTime > 0){
+//             queueTime--;
+//         }else {
+//             clearInterval(countDown);
+//             headlineEl.textContent = "";
+//         }
+
+//      }, 1000)
+// }
