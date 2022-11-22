@@ -44,11 +44,9 @@ saveScoreBtn.textContent = "Save Score";
 
 submitBtn.setAttribute("class", "btn btn-primary")
 submitBtn.setAttribute("id", "submit")
-// submitBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet; margin-left: 10px;padding-bottom: 2px;padding-top: 2px;margin-bottom: 4px;')
 submitBtn.textContent = "Submit";
 
 saveScoreForm.setAttribute('id', 'form');
-// saveScoreForm.setAttribute('onsubmit')
 saveScoreForm.innerHTML = `
 <label for="initials">Initials</label>
 <input type="text" id="initials" placeholder="Enter your initials" maxlength="3">`
