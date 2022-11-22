@@ -56,3 +56,8 @@ button:hover {
     padding-top: 2px;
     margin-bottom: 4px;
 }
+
+#table {
+    display: flex;
+    justify-content: center;
+}

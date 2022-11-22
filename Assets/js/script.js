@@ -184,16 +184,20 @@ function saveScore () {
     bannerEl.textContent = "Scores"
     submitScore.appendChild(saveScoreForm);
     saveScoreForm.appendChild(submitBtn);
+    document.querySelector("#name").textContent = "Name"
+    document.querySelector("#goal").textContent = "Score"
+
 }
 
 function listScore () {
+    // Get the value (initials) of the form 
     var input = document.querySelector("#initials").value;
 
-    // We create an element for each gotten input value
+    // Creates a list element for each submitted form
     var todo = document.createElement("li");
     
-    // We set the text(value) of the todo item(li)
-    var txt = document.createTextNode(input);
+    // Sets the text(value) of the todo item(li)
+    var txt = document.createTextNode(`Name: ${input} \| Score: ${score}`);
     
     // We append the text(value) to do created element(li)
     todo.appendChild(txt);
@@ -226,11 +230,3 @@ saveScoreForm.addEventListener('submit', e => e.preventDefault());
 
 //      }, 1000)
 // }
-
-{/* <form class="form-inline" action="/action_page.php">
-  <label for="initials">Initials</label>
-  <input type="text" id="initials" placeholder="Enter your initials">
-  <button type="submit">Submit</button>
-</form> */}
-
-{/* <button class="btn btn-primary" style="background: blueViolet;border-color: blueViolet;margin-left: 10px;padding-bottom: 2px;padding-top: 2px;margin-bottom: 4px;">Submit</button> */}
