@@ -6,6 +6,12 @@ var timerEl = document.querySelector("#timer");
 var headlineEl = document.querySelector("#headline");
 // Selects 'banner' ID
 var bannerEl = document.querySelector("#banner");
+// Selects 'score' ID
+var scoreText = document.querySelector("#score");
+// Selects 'input' ID
+var submitScore = document.querySelector("#input");
+// Selects 'list' ID
+var scoreList = document.querySelector("#list");
 // Selects the 'questions' ID
 var questionsEl = document.querySelector("#questions");
 // Selects the 'answers' ID
@@ -16,16 +22,15 @@ var startGameBtn = document.createElement("button")
 var highScoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 var questionsText = document.createElement("h2");
-var scoreText = document.createElement("p");
 var saveScoreBtn = document.createElement("button");
+var saveScoreForm = document.createElement("form");
+var submitBtn = document.createElement("button");
 
 // Appends Elements to the DOM
 headlineEl.appendChild(startGameBtn);
-highScoreEl.appendChild(highScoreText);
 timerEl.appendChild(timerCount);
 questionsEl.appendChild(questionsText)
-headlineEl.appendChild(scoreText);
-// headlineEl.appendChild(saveScoreBtn);
+
 
 
 // 'Start Game Button' Styling and Class declarations
@@ -37,7 +42,16 @@ saveScoreBtn.setAttribute("class", "btn btn-primary btn-lg")
 saveScoreBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
 saveScoreBtn.textContent = "Save Score";
 
-scoreText.setAttribute('id', 'score');
+submitBtn.setAttribute("class", "btn btn-primary")
+submitBtn.setAttribute("id", "submit")
+submitBtn.textContent = "Submit";
+
+saveScoreForm.setAttribute('id', 'form');
+saveScoreForm.innerHTML = `
+<label for="initials">Initials</label>
+<input type="text" id="initials" placeholder="Enter your initials" maxlength="3">`
+
+// scoreText.setAttribute('id', 'score');
 highScoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: 90"
 
@@ -62,17 +76,16 @@ var answerChoices4 = ['const','var','let','constant'];
 
 // Starts Game Timer
 function startTimer() {
-    setInterval(function(event){
+    var timer = setInterval(function(event){
         timerCount.innerHTML = `<h2>Timer: ${gameTime}</h2>`
         if (gameTime > 0) {
             gameTime--;
         } else {
-            clearInterval(startTimer);
             gameOver();
+            clearInterval(timer);
         }
     }, 1000)
 }
-
 
 function game() {
     startGameBtn.remove();
@@ -122,7 +135,6 @@ function game() {
 
     }else {
         gameOver();
-        // headlineEl.appendChild(saveScoreBtn);
     }
 }
 
@@ -154,35 +166,55 @@ function gameOver() {
     answersEl.innerHTML=""
     timerCount.textContent = "Timer: 00";
     headlineEl.appendChild(saveScoreBtn)
-    return gameTime;
-    
+    return gameTime;   
 }
-function startGame(event) {
+
+function startGame() {
     startTimer();
-    event.preventDefault()
     game();
 }
 
-// function iWasClicked
+function saveScore () {
+    saveScoreBtn.remove();
+    bannerEl.textContent = "Scores"
+    submitScore.appendChild(saveScoreForm);
+    saveScoreForm.appendChild(submitBtn);
+}
+
+function listScore () {
+    // Get the value (initials) of the form 
+    var input = document.querySelector("#initials").value.toUpperCase();
+
+    if (input === ''){
+
+        alert(`Please Submit Initials`);
+        
+    }else if (/[0-9]/.test(input) === true){
+
+        alert(`Please only use standard alphabets`);
+
+    }else if (/[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/g.test(input)=== true){
+
+        alert(`Please only use standard alphabets`);
+
+    }
+     else {
+        // Creates a list element for each submitted form
+        var listEl = document.createElement("li");
+        
+        // Sets the text(value) of the todo item(li)
+        var txt = document.createTextNode(`Name: ${input} \| Score: ${score}`);
+        
+        // We append the text(value) to do created element(li)
+        listEl.appendChild(txt);
+    
+        scoreList.appendChild(listEl);
+    }
+}
 
 startGameBtn.addEventListener("click", startGame);
 
-// saveScoreBtn.addEventListener("click",)
+saveScoreBtn.addEventListener("click",saveScore);
 
-
-
-// Queues Count Down
-// function countDown() {
-//     headlineEl.textContent=""
-//     startGameBtn.remove();
-//     setInterval(function(event) {
-//         headlineEl.textContent = `${queueTime}`
-//         if (queueTime > 0){
-//             queueTime--;
-//         }else {
-//             clearInterval(countDown);
-//             headlineEl.textContent = "";
-//         }
-
-//      }, 1000)
-// }
+submitBtn.addEventListener('click', listScore);
+saveScoreForm.addEventListener('submit', e => e.preventDefault());
