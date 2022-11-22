@@ -35,7 +35,7 @@ startGameBtn.textContent = "Start Game"
 
 saveScoreBtn.setAttribute("class", "btn btn-primary btn-lg")
 saveScoreBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
-saveScoreBtn.textContent = "Save Me";
+saveScoreBtn.textContent = "Save Score";
 
 scoreText.setAttribute('id', 'score');
 highScoreText.textContent = "High Scores";
