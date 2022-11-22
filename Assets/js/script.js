@@ -184,9 +184,6 @@ function saveScore () {
     bannerEl.textContent = "Scores"
     submitScore.appendChild(saveScoreForm);
     saveScoreForm.appendChild(submitBtn);
-    document.querySelector("#name").textContent = "Name"
-    document.querySelector("#goal").textContent = "Score"
-
 }
 
 function listScore () {
@@ -194,15 +191,15 @@ function listScore () {
     var input = document.querySelector("#initials").value;
 
     // Creates a list element for each submitted form
-    var todo = document.createElement("li");
+    var listEl = document.createElement("li");
     
     // Sets the text(value) of the todo item(li)
     var txt = document.createTextNode(`Name: ${input} \| Score: ${score}`);
     
     // We append the text(value) to do created element(li)
-    todo.appendChild(txt);
+    listEl.appendChild(txt);
 
-    scoreList.appendChild(todo);
+    scoreList.appendChild(listEl);
 }
 
 startGameBtn.addEventListener("click", startGame);
