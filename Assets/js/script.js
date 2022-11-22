@@ -43,7 +43,7 @@ timerCount.textContent = "Timer: 90"
 
 // Declares the times for the quiz 
 var queueTime = 3;
-var gameTime = 90;
+var gameTime = 10;
 var questionNum = 1; 
 const amount = 4;
 var score = 0;
@@ -62,13 +62,13 @@ var answerChoices4 = ['const','var','let','constant'];
 
 // Starts Game Timer
 function startTimer() {
-    setInterval(function(event){
+    var timer = setInterval(function(event){
         timerCount.innerHTML = `<h2>Timer: ${gameTime}</h2>`
         if (gameTime > 0) {
             gameTime--;
         } else {
-            clearInterval(startTimer);
             gameOver();
+            clearInterval(timer);
         }
     }, 1000)
 }
@@ -157,17 +157,21 @@ function gameOver() {
     return gameTime;
     
 }
-function startGame(event) {
+
+function startGame() {
     startTimer();
-    event.preventDefault()
     game();
 }
 
-// function iWasClicked
+function saveScore (event) {
+    event.preventDefault
+    debugger
+    bannerEl.textContent = "Scores"
+}
 
 startGameBtn.addEventListener("click", startGame);
 
-// saveScoreBtn.addEventListener("click",)
+saveScoreBtn.addEventListener("click",saveScore);
 
 
 
