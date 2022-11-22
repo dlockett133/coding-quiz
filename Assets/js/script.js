@@ -183,12 +183,22 @@ function saveScore () {
 
 function listScore () {
     // Get the value (initials) of the form 
-    var input = document.querySelector("#initials").value;
+    var input = document.querySelector("#initials").value.toUpperCase();
 
-    if (input === '') {
-        alert(`Please submit initials`);
+    if (input === ''){
+
+        alert(`Please Submit Initials`);
         
-    } else {
+    }else if (/[0-9]/.test(input) === true){
+
+        alert(`Please only use standard alphabets`);
+
+    }else if (/[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/g.test(input)=== true){
+
+        alert(`Please only use standard alphabets`);
+
+    }
+     else {
         // Creates a list element for each submitted form
         var listEl = document.createElement("li");
         
