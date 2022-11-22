@@ -17,10 +17,10 @@ var questionsEl = document.querySelector("#questions");
 // Selects the 'answers' ID
 var answersEl = document.querySelector("#answers");
 
-bannerEl.textContent = "Coding Quiz"
+bannerEl.textContent = "JavaScript Coding Quiz"
 var startGameBtn = document.createElement("button")
 var highScoreText = document.createElement("h2");
-var timerCount = document.createElement("h2");
+var timerCount = document.createElement("p");
 var questionsText = document.createElement("h2");
 var saveScoreBtn = document.createElement("button");
 var saveScoreForm = document.createElement("form");
@@ -77,7 +77,7 @@ var answerChoices4 = ['const','var','let','constant'];
 // Starts Game Timer
 function startTimer() {
     var timer = setInterval(function(event){
-        timerCount.innerHTML = `<h2>Timer: ${gameTime}</h2>`
+        timerCount.textContent = `Timer: ${gameTime}`
         if (gameTime > 0) {
             gameTime--;
         } else {
@@ -205,7 +205,7 @@ function listScore () {
         // Sets the text(value) of the todo item(li)
         var txt = document.createTextNode(`Name: ${input} \| Score: ${score}`);
         
-        // We append the text(value) to do created element(li)
+        // We append the text(value) to the created element(li)
         listEl.appendChild(txt);
     
         scoreList.appendChild(listEl);
