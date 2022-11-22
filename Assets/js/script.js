@@ -185,16 +185,21 @@ function listScore () {
     // Get the value (initials) of the form 
     var input = document.querySelector("#initials").value;
 
-    // Creates a list element for each submitted form
-    var listEl = document.createElement("li");
+    if (input === '') {
+        alert(`Please submit initials`);
+        
+    } else {
+        // Creates a list element for each submitted form
+        var listEl = document.createElement("li");
+        
+        // Sets the text(value) of the todo item(li)
+        var txt = document.createTextNode(`Name: ${input} \| Score: ${score}`);
+        
+        // We append the text(value) to do created element(li)
+        listEl.appendChild(txt);
     
-    // Sets the text(value) of the todo item(li)
-    var txt = document.createTextNode(`Name: ${input} \| Score: ${score}`);
-    
-    // We append the text(value) to do created element(li)
-    listEl.appendChild(txt);
-
-    scoreList.appendChild(listEl);
+        scoreList.appendChild(listEl);
+    }
 }
 
 startGameBtn.addEventListener("click", startGame);
