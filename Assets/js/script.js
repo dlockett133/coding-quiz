@@ -6,6 +6,8 @@ var timerEl = document.querySelector("#timer");
 var headlineEl = document.querySelector("#headline");
 // Selects 'banner' ID
 var bannerEl = document.querySelector("#banner");
+// Selects 'score' ID
+var scoreText = document.querySelector("#score");
 // Selects the 'questions' ID
 var questionsEl = document.querySelector("#questions");
 // Selects the 'answers' ID
@@ -16,15 +18,17 @@ var startGameBtn = document.createElement("button")
 var highScoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 var questionsText = document.createElement("h2");
-var scoreText = document.createElement("p");
+// var scoreText = document.createElement("p");
 var saveScoreBtn = document.createElement("button");
+var saveScoreForm = document.createElement("form");
+var submitBtn = document.createElement("form");
 
 // Appends Elements to the DOM
 headlineEl.appendChild(startGameBtn);
 highScoreEl.appendChild(highScoreText);
 timerEl.appendChild(timerCount);
 questionsEl.appendChild(questionsText)
-headlineEl.appendChild(scoreText);
+// headlineEl.appendChild(scoreText);
 // headlineEl.appendChild(saveScoreBtn);
 
 
@@ -37,13 +41,17 @@ saveScoreBtn.setAttribute("class", "btn btn-primary btn-lg")
 saveScoreBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
 saveScoreBtn.textContent = "Save Score";
 
-scoreText.setAttribute('id', 'score');
+submitBtn.setAttribute("class", "btn btn-primary btn-lg")
+submitBtn.setAttribute('style', 'background: blueViolet; border-color: blueViolet')
+submitBtn.textContent = "Submit";
+
+// scoreText.setAttribute('id', 'score');
 highScoreText.textContent = "High Scores";
 timerCount.textContent = "Timer: 90"
 
 // Declares the times for the quiz 
 var queueTime = 3;
-var gameTime = 10;
+var gameTime = 90;
 var questionNum = 1; 
 const amount = 4;
 var score = 0;
@@ -122,7 +130,6 @@ function game() {
 
     }else {
         gameOver();
-        // headlineEl.appendChild(saveScoreBtn);
     }
 }
 
@@ -154,8 +161,7 @@ function gameOver() {
     answersEl.innerHTML=""
     timerCount.textContent = "Timer: 00";
     headlineEl.appendChild(saveScoreBtn)
-    return gameTime;
-    
+    return gameTime;   
 }
 
 function startGame() {
@@ -163,10 +169,12 @@ function startGame() {
     game();
 }
 
-function saveScore (event) {
-    event.preventDefault
-    debugger
+function saveScore () {
+    saveScoreBtn.remove();
     bannerEl.textContent = "Scores"
+
+    
+
 }
 
 startGameBtn.addEventListener("click", startGame);
@@ -190,3 +198,9 @@ saveScoreBtn.addEventListener("click",saveScore);
 
 //      }, 1000)
 // }
+
+{/* <form class="form-inline" action="/action_page.php">
+  <label for="initials">Initials</label>
+  <input type="text" id="initials" placeholder="Enter your initials">
+  <button type="submit">Submit</button>
+</form> */}
