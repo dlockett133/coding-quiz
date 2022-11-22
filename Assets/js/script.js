@@ -51,6 +51,7 @@ submitBtn.setAttribute("id", "submit")
 submitBtn.textContent = "Submit";
 
 saveScoreForm.setAttribute('id', 'form');
+// saveScoreForm.setAttribute('onsubmit')
 saveScoreForm.innerHTML = `
 <label for="initials">Initials</label>
 <input type="text" id="initials" placeholder="Enter your initials">`
@@ -185,13 +186,28 @@ function saveScore () {
     saveScoreForm.appendChild(submitBtn);
 }
 
-function submitScore () {
+function listScore () {
+    var input = document.querySelector("#initials").value;
 
+    // We create an element for each gotten input value
+    var todo = document.createElement("li");
+    
+    // We set the text(value) of the todo item(li)
+    var txt = document.createTextNode(input);
+    
+    // We append the text(value) to do created element(li)
+    todo.appendChild(txt);
+
+    scoreList.appendChild(todo);
 }
 
 startGameBtn.addEventListener("click", startGame);
 
 saveScoreBtn.addEventListener("click",saveScore);
+
+submitBtn.addEventListener('click', listScore);
+saveScoreForm.addEventListener('submit', e => e.preventDefault());
+
 
 
 
