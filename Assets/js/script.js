@@ -22,18 +22,15 @@ var startGameBtn = document.createElement("button")
 var highScoreText = document.createElement("h2");
 var timerCount = document.createElement("h2");
 var questionsText = document.createElement("h2");
-// var scoreText = document.createElement("p");
 var saveScoreBtn = document.createElement("button");
 var saveScoreForm = document.createElement("form");
 var submitBtn = document.createElement("button");
 
 // Appends Elements to the DOM
 headlineEl.appendChild(startGameBtn);
-highScoreEl.appendChild(highScoreText);
 timerEl.appendChild(timerCount);
 questionsEl.appendChild(questionsText)
-// headlineEl.appendChild(scoreText);
-// headlineEl.appendChild(saveScoreBtn);
+
 
 
 // 'Start Game Button' Styling and Class declarations
@@ -208,22 +205,3 @@ saveScoreBtn.addEventListener("click",saveScore);
 
 submitBtn.addEventListener('click', listScore);
 saveScoreForm.addEventListener('submit', e => e.preventDefault());
-
-
-
-
-// Queues Count Down
-// function countDown() {
-//     headlineEl.textContent=""
-//     startGameBtn.remove();
-//     setInterval(function(event) {
-//         headlineEl.textContent = `${queueTime}`
-//         if (queueTime > 0){
-//             queueTime--;
-//         }else {
-//             clearInterval(countDown);
-//             headlineEl.textContent = "";
-//         }
-
-//      }, 1000)
-// }
